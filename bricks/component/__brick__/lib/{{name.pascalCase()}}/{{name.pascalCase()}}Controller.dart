@@ -3,7 +3,7 @@ import '{{name.pascalCase()}}.dart';
 import 'languages/LanguageFactory.dart';
 import 'package:winter/winter.dart';
 
-class {{name.pascalCase()}}Controller {
+class {{name.pascalCase()}}Controller implements Controller {
   late final {{name.pascalCase()}}Model? data;
   late final {{name.pascalCase()}} view;
   late final LanguageFactory languageFactory;
@@ -13,4 +13,9 @@ class {{name.pascalCase()}}Controller {
   }
   String greet = "Hello from {{name.pascalCase()}}Page";
   void reset(){}
+
+  View getView(){
+    return this.view;
+  }
+
 }

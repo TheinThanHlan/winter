@@ -1,4 +1,4 @@
 import 'package:winter/winter.dart';
 
-class {{name.pascalCase()}}Model{
+class {{name.pascalCase()}}Model implements Model{
 }
