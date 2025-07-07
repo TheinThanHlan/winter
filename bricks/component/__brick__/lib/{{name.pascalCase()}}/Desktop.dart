@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import './{{name.pascalCase()}}Controller.dart';
 import 'package:winter/winter.dart';
 
-class Desktop extends StatelessWidget {
+class Desktop extends StatelessWidget implements WinterView{
   late final  {{name.pascalCase()}}Controller c;
   Desktop(this.c);
   Widget build(BuildContext context) {
