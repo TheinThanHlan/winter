@@ -3,7 +3,7 @@ import './{{name.pascalCase()}}Controller.dart';
 import 'package:winter/winter.dart';
 import './Desktop.dart';
 
-class {{name.pascalCase()}} extends StatelessWidget implements View{
+class {{name.pascalCase()}} extends StatelessWidget implements WinterView{
   late final {{name.pascalCase()}}Controller c;
   {{name.pascalCase()}}();
   @override
