@@ -14,7 +14,7 @@ class {{name.pascalCase()}}Controller implements WinterController {
   String greet = "Hello from {{name.pascalCase()}}Page";
   void reset(){}
 
-  WinterView getView(){
+  Widget getView(){
     return this.view;
   }
 
