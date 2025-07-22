@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 import 'dart:io';
 import 'package:flutter/widgets.dart';
@@ -7,12 +8,12 @@ class WinterSqliteDatabaseProvider {
   String db_name;
   int db_version;
   //use "--#-#"  in sql file to split sessions
-  String sql_prepare_schema;
+  List<String> sql_files_in_order;
 
   WinterSqliteDatabaseProvider(
     this.db_name,
     this.db_version,
-    this.sql_prepare_schema,
+    this.sql_files_in_order,
   );
 
   //function to create or get the database object
@@ -21,13 +22,19 @@ class WinterSqliteDatabaseProvider {
       sqfliteFfiInit();
       databaseFactory = databaseFactoryFfi;
     }
-    List<String> schemas = sql_prepare_schema.trim().split("--#-#");
+
     final String db_path = join(await getDatabasesPath(), db_name);
     debugPrint(db_path);
     final Database db = await openDatabase(
       db_path,
       version: db_version,
       onCreate: (db, version) async {
+        List<String> schemas = this.sql_files_in_order
+            .map((a) async {
+              return await rootBundle.loadString(a);
+            })
+            .join("--#-#")
+            .split("--#-#");
         for (var a in schemas) {
           try {
             await db.execute(a);

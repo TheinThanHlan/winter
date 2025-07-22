@@ -6,4 +6,5 @@ export 'controller/WinterController.dart';
 export 'bean/WinterModel.dart';
 export 'db/WinterSqliteDatabaseProvider.dart';
 
+
 final GetIt getIt = GetIt.I;
