@@ -29,12 +29,11 @@ class WinterSqliteDatabaseProvider {
       db_path,
       version: db_version,
       onCreate: (db, version) async {
-        List<String> schemas = this.sql_files_in_order
-            .map((a) async {
-              return await rootBundle.loadString(a);
-            })
-            .join("--#-#")
-            .split("--#-#");
+        String tmp = "";
+        for (var a in this.sql_files_in_order) {
+          tmp += "--#-#" + await rootBundle.loadString(a) + "--#-#";
+        }
+        List<String> schemas = tmp.split("--#-#");
         for (var a in schemas) {
           try {
             await db.execute(a);
