@@ -31,7 +31,8 @@ class WinterSqliteDatabaseProvider {
       onCreate: (db, version) async {
         String tmp = "";
         for (var a in this.sql_files_in_order) {
-          tmp += "--#-#" + await rootBundle.loadString(a) + "--#-#";
+          String tmp1 = await rootBundle.loadString(a);
+          tmp += "--#-# $tmp1 --#-#";
         }
         List<String> schemas = tmp.split("--#-#");
         for (var a in schemas) {
