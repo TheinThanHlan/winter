@@ -31,3 +31,9 @@ vars:
     description: Your name
     default: Dash
     prompt: What is your name?
+
+  database_name:
+    type: string
+    description: Database Name
+    default: ""
+    prompt: What is the name of database?
