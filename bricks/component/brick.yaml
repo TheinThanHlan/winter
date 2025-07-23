@@ -28,6 +28,6 @@ environment:
 vars:
   name:
     type: string
-    description: Your name
+    description: Component Name
     default: Dash
-    prompt: What is your name?
+    prompt: What is the component name?
