@@ -28,9 +28,9 @@ environment:
 vars:
   name:
     type: string
-    description: Your name
+    description: Data Class Name
     default: Dash
-    prompt: What is your name?
+    prompt: What is the data class name?
 
   database_name:
     type: string
