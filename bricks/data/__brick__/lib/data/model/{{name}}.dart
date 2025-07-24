@@ -5,7 +5,7 @@ class {{name}}{
 
 
   factory {{name}}.fromJson(Map<String, dynamic> json) {
-    return OCA(
+    return {{name}}(
       json["id"],
     );
   }
