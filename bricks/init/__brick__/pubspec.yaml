@@ -39,7 +39,7 @@ dependencies:
     git:
       url: https://github.com/TheinThanHlan/winter.git
       path: winter
-      ref: v1.1
+      ref: { { version } }
 
 dev_dependencies:
   flutter_test:
