@@ -1,4 +1,4 @@
-define: &version { { version } }
+define: &version {{version}}
 bricks:
   # Bricks can be imported via version constraint from a registry.
   # Uncomment the following line to import the "hello" brick from BrickHub.
