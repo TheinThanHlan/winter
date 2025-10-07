@@ -1,4 +1,4 @@
 import 'package:winter/winter.dart';
 class {{name}}Dao{
-  Database _db=getIt<Database>(instanceName:"{{database_name}}");
+  Database _db=getIt<DatabaseProvider>(instanceName:"{{database_name}}").getDb();
 }
