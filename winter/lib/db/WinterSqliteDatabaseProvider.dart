@@ -74,4 +74,10 @@ class WinterSqliteDatabaseProvider {
   void backupDatabase(String backupPath) {
     File(getDb().path).copySync(backupPath);
   }
+
+  Future<void> createNewDb() async {
+    File(getDb().path).delete();
+    _db = null;
+    await createDb();
+  }
 }
