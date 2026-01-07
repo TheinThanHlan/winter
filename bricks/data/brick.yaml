@@ -32,8 +32,8 @@ vars:
     default: Dash
     prompt: What is the data class name?
 
-  database_name:
-    type: string
-    description: Database Name
-    default: ""
-    prompt: What is the name of database?
+  #database_name:
+  #  type: string
+  #  description: Database Name
+  #  default: ""
+  #  prompt: What is the name of database?
