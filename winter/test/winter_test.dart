@@ -1,5 +1,11 @@
-import 'package:flutter_test/flutter_test.dart';
+import "../lib/bean/WinterLanguageMappinig.dart";
 
-import 'package:winter/winter.dart';
+enum SupportingLanguages implements WinterLangCodeEnum { en, my }
 
-void main() {}
+void main() {
+  var x = WinterLanguageMapping<SupportingLanguages>(
+    SupportingLanguages.values,
+  );
+  x.addLangMap(SupportingLanguages.en, "haha", "haha");
+  x.addLangMap(SupportingLanguages.my, "haha", "ဟဟ");
+}

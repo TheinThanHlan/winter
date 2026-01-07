@@ -1,3 +1,3 @@
-abstract class Configurer {
+abstract interface class Configurer {
   Future<void> config({String? instanceName});
 }

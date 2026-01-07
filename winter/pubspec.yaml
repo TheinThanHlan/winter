@@ -9,11 +9,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  get_it:
   sqflite:
   sqflite_common_ffi:
   path:
   path_provider:
+  watch_it:
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
