@@ -31,6 +31,16 @@ vars:
     description: Data Class Name
     default: Dash
     prompt: What is the data class name?
+  
+
+
+  variables:
+    type: map
+    description: List of variable names.
+    prompt: please list the variables 
+    
+
+
 
   #database_name:
   #  type: string
