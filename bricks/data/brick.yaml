@@ -34,11 +34,7 @@ vars:
   
 
 
-  variables:
-    type: list
-    description: List of variable names.
-    prompt: please list the variables 
-    
+  
 
 
 
