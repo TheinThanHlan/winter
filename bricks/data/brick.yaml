@@ -35,7 +35,7 @@ vars:
 
 
   variables:
-    type: map
+    type: list
     description: List of variable names.
     prompt: please list the variables 
     
