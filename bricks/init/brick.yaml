@@ -27,6 +27,6 @@ environment:
 vars:
   version:
     type: string
-    default: v1.1
+    default: master
     description: Winter version.
     prompt: Enter the version of winter to use.
