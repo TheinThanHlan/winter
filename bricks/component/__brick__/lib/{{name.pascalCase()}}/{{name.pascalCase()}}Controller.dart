@@ -1,6 +1,5 @@
 import '{{name.pascalCase()}}Model.dart';
 import '{{name.pascalCase()}}.dart';
-import 'languages/LanguageFactory.dart';
 import 'package:winter/winter.dart';
 import 'package:flutter/widgets.dart';
 

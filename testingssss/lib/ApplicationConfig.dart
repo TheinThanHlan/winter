@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:winter/winter.dart';
+import 'package:winter_testttttt/Home/HomeComponentConfig.dart';
 
 class ApplicationConfig implements Configurer {
   @override
@@ -8,5 +9,6 @@ class ApplicationConfig implements Configurer {
       ValueNotifier("en"),
       instanceName: "currentLanguage",
     );
+    HomeComponentConfig().config();
   }
 }

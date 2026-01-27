@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
 
-abstract class WinterController {
+abstract interface class WinterController {
   Widget getView();
 }

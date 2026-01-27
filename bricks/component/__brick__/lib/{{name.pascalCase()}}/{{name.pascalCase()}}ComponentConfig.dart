@@ -1,3 +1,4 @@
+import 'languages/JapanLanguageMap.dart';
 import '{{name.pascalCase()}}Controller.dart';
 import '{{name.pascalCase()}}.dart';
 import '{{name.pascalCase()}}Model.dart';
@@ -11,7 +12,9 @@ class {{name.pascalCase()}}ComponentConfig implements Configurer{
   getIt.registerSingleton(instanceName:instanceName,{{name.pascalCase()}}Controller(
 
     {{name.pascalCase()}}(), LanguageFactory(
-    getIt<ValueNotifier<String>>(instanceName: "currentLanguage"))));
+    getIt<ValueNotifier<String>>(instanceName: "currentLanguage"),
+    {"jp",JapanLanguageMap()}
+    )));
    debugPrint("\t~>\t{{name}} injected;");
  }
 

@@ -36,10 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
 
   winter:
-    git:
-      url: https://github.com/TheinThanHlan/winter.git
-      path: winter
-      ref: master
+    path: ../winter/
 
 dev_dependencies:
   flutter_test:

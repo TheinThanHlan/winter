@@ -1,1 +1,1 @@
-{"bricks":{"component":{"git":{"url":"https://github.com/TheinThanHlan/winter.git","path":"bricks/component","ref":"f5548b181659f4ea27700846efdcddf49cef7f2e"}},"data":{"git":{"url":"https://github.com/TheinThanHlan/winter.git","path":"bricks/data","ref":"f5548b181659f4ea27700846efdcddf49cef7f2e"}},"init":{"git":{"url":"https://github.com/TheinThanHlan/winter.git","path":"bricks/init","ref":"f5548b181659f4ea27700846efdcddf49cef7f2e"}}}}
+{"bricks":{"component":{"path":"/home/tth/projects/winter/bricks/component"},"data":{"path":"/home/tth/projects/winter/bricks/data"}}}

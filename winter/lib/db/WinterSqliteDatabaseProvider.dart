@@ -24,7 +24,6 @@ class WinterSqliteDatabaseProvider {
         sqfliteFfiInit();
         databaseFactory = databaseFactoryFfi;
       }
-
       final String db_path = join(await getDatabasesPath(), db_name);
       debugPrint(db_path);
       _db = await openDatabase(

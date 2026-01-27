@@ -4,6 +4,7 @@ export 'context/Configurer.dart';
 export 'controller/WinterController.dart';
 export 'bean/WinterModel.dart';
 export 'db/WinterSqliteDatabaseProvider.dart';
-export 'bean/WinterLanguageMappinig.dart';
+export "lang/LanguageFactory.dart";
+export "lang/WinterLanguageMapper.dart";
 
 GetIt getIt = GetIt.I;
