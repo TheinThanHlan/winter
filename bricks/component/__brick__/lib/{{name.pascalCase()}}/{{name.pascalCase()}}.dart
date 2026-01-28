@@ -10,5 +10,6 @@ class {{name.pascalCase()}} extends StatelessWidget {
     //    return LayoutBuilder(builder: (context, constraints) {
     //      return Desktop(c);
     //    });
+    return Container();
   }
 }

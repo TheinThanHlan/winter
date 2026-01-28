@@ -5,7 +5,6 @@ import '{{name.pascalCase()}}Model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:winter/winter.dart';
 
-import 'languages/LanguageFactory.dart';
 
 class {{name.pascalCase()}}ComponentConfig implements Configurer{
  Future<void> config({String?instanceName})async{
@@ -13,7 +12,7 @@ class {{name.pascalCase()}}ComponentConfig implements Configurer{
 
     {{name.pascalCase()}}(), LanguageFactory(
     getIt<ValueNotifier<String>>(instanceName: "currentLanguage"),
-    {"jp",JapanLanguageMap()}
+    {"jp":JapanLanguageMap()}
     )));
    debugPrint("\t~>\t{{name}} injected;");
  }

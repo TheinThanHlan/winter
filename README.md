@@ -13,7 +13,7 @@ This project contains.
 ### Install mason cli and add winter-init brick 
 ```bash
 dart pub global activate mason_cli
-mason add -g init --git-url https://github.com/TheinThanHlan/winter.git --git-path bricks/winter-init --git-ref master
+mason add -g winter-init --git-url https://github.com/TheinThanHlan/winter.git --git-path bricks/winter-init --git-ref master
 ```
 
 
@@ -23,6 +23,7 @@ mkdir my_app
 cd my_app
 mason make winter-init --version master --name my_app
 flutter create .
+mason upgrade
 ```
 
 
