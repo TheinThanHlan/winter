@@ -31,3 +31,12 @@ mason upgrade
 ```bash
 flutter run
 ```
+
+
+
+### Create a new component
+```bash
+mason make component --name YourComponentName
+```
+
+### Create dao

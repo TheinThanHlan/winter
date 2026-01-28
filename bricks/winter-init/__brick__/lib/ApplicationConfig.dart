@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:winter/winter.dart';
 import './SayHello/all.dart';
+import './data/dao/DaoConfig.dart';
 
 class ApplicationConfig implements Configurer {
   @override
@@ -9,6 +10,7 @@ class ApplicationConfig implements Configurer {
       ValueNotifier("jp"),
       instanceName: "currentLanguage",
     );
+    await DaoConfig().config();
     SayHelloComponentConfig().config();
   }
 }
