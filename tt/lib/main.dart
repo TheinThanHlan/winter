@@ -1,8 +1,7 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:tt/SayHello/SayHelloController.dart';
 import 'ApplicationConfig.dart';
 import 'package:winter/winter.dart';
+import './SayHello/all.dart';
 
 void main() {
   ApplicationConfig().config().then((a) {

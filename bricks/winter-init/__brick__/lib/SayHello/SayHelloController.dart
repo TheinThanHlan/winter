@@ -8,14 +8,12 @@ class SayHelloController implements WinterController {
   late final SayHello view;
   late final LanguageFactory languageFactory;
   //final module = getIt<GetIt>(instanceName:);
-  SayHelloController(this.view,this.languageFactory,{this.data}){
-   this.view.c=this;
+  SayHelloController(this._view, this.languageFactory, {this.data}) {
+    this._view.c = this;
   }
-  String greet = "Hello from SayHelloPage";
-  void reset(){}
+  void reset() {}
 
-  Widget getView(){
-    return this.view;
+  Widget getView() {
+    return this._view;
   }
-
 }

@@ -8,10 +8,9 @@ class {{name.pascalCase()}}Controller implements WinterController {
   late final {{name.pascalCase()}} _view;
   late final LanguageFactory languageFactory;
   //final module = getIt<GetIt>(instanceName:);
-  {{name.pascalCase()}}Controller(this.view,this.languageFactory,{this.data}){
+  {{name.pascalCase()}}Controller(this._view,this.languageFactory,{this.data}){
    this._view.c=this;
   }
-  String greet = "Hello from {{name.pascalCase()}}Page";
   void reset(){}
 
   Widget getView(){
