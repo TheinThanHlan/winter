@@ -39,4 +39,19 @@ flutter run
 mason make component --name YourComponentName
 ```
 
-### Create dao
+### and add following into ApplicationConfig.dart 
+
+```dart
+YourComponentNameComponentConfig().config();
+```
+
+
+### Create data class
+```bash
+mason make data --name YourDataClassName
+```
+
+
+
+
+
