@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 
 class SayHelloController implements WinterController {
   late final SayHelloModel? data;
-  late final SayHello view;
+  late final SayHello _view;
   late final LanguageFactory languageFactory;
   //final module = getIt<GetIt>(instanceName:);
   SayHelloController(this._view, this.languageFactory, {this.data}) {
