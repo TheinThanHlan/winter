@@ -21,7 +21,7 @@ mason add -g winter-init --git-url https://github.com/TheinThanHlan/winter.git -
 ```bash
 mkdir my_app
 cd my_app
-mason make winter-init --version master --name my_app
+mason make winter-init --version master --name $(basename $(pwd))
 flutter create .
 mason upgrade
 ```

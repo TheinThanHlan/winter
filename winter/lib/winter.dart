@@ -1,10 +1,10 @@
-import 'package:watch_it/watch_it.dart';
+import 'package:get_it/get_it.dart';
 export "package:sqflite/sqflite.dart";
 export 'context/Configurer.dart';
 export 'controller/WinterController.dart';
 export 'bean/WinterModel.dart';
 export 'db/WinterSqliteDatabaseProvider.dart';
-export "lang/LanguageFactory.dart";
+export "lang/WinterLanguageFactory.dart";
 export "lang/WinterLanguageMapper.dart";
 
-GetIt getIt = GetIt.I;
+final GetIt getIt = GetIt.I;

@@ -13,8 +13,8 @@ dependencies:
   sqflite_common_ffi:
   path:
   path_provider:
-  watch_it:
-
+  #watch_it:
+  get_it:
 dev_dependencies:
   flutter_test:
     sdk: flutter
