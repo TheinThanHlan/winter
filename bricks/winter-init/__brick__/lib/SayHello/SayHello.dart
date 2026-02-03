@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import './SayHelloController.dart';
 import 'package:winter/winter.dart';
+import "SayHelloModel.dart";
 
-class SayHello extends StatelessWidget {
-  late final SayHelloController c;
-  SayHello();
+class SayHello extends StatelessWidget implements WinterView {
+  //late final SayHelloController c;
+  final WinterLanguageFactory _lf;
+  final SayHelloModel _model;
+  SayHello(this._lf, this._model);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text(
-          c.languageFactory.getLang("hello").toUpperCase(),
-          style: Theme.of(context).textTheme.displayLarge,
-        ),
-      ),
-    );
+    //    return LayoutBuilder(builder: (context, constraints) {
+    //      return Desktop(c);
+    //    });
+    return Text(_lf.getLang("hello"));
   }
 }

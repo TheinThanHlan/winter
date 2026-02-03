@@ -1,19 +1,20 @@
 import 'SayHelloModel.dart';
 import 'SayHello.dart';
 import 'package:winter/winter.dart';
-import 'package:flutter/widgets.dart';
 
 class SayHelloController implements WinterController {
-  late final SayHelloModel? data;
+  final SayHelloModel _model;
   late final SayHello _view;
-  late final LanguageFactory languageFactory;
+  final WinterLanguageFactory _lf;
   //final module = getIt<GetIt>(instanceName:);
-  SayHelloController(this._view, this.languageFactory, {this.data}) {
-    this._view.c = this;
+  SayHelloController(this._lf,this._model){
+   //this._view.c=this;
+    _view = SayHello(_lf,_model);
   }
-  void reset() {}
+  void reset(){}
 
-  Widget getView() {
+  WinterView getView(){
     return this._view;
   }
+
 }
