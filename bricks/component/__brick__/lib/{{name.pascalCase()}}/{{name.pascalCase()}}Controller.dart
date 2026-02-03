@@ -1,19 +1,19 @@
 import '{{name.pascalCase()}}Model.dart';
 import '{{name.pascalCase()}}.dart';
 import 'package:winter/winter.dart';
-import 'package:flutter/widgets.dart';
 
 class {{name.pascalCase()}}Controller implements WinterController {
-  late final {{name.pascalCase()}}Model? data;
+  final {{name.pascalCase()}}Model _model;
   late final {{name.pascalCase()}} _view;
-  late final LanguageFactory languageFactory;
+  final WinterLanguageFactory _lf;
   //final module = getIt<GetIt>(instanceName:);
-  {{name.pascalCase()}}Controller(this._view,this.languageFactory,{this.data}){
-   this._view.c=this;
+  {{name.pascalCase()}}Controller(this._lf,this._model){
+   //this._view.c=this;
+    _view = {{name.pascalCase()}}(_lf,_model);
   }
   void reset(){}
 
-  Widget getView(){
+  WinterView getView(){
     return this._view;
   }
 
