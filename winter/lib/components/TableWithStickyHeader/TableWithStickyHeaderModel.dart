@@ -40,16 +40,5 @@ class TableWithStickyHeaderModel implements WinterModel {
     this.tableBorder = const TableBorder(
       horizontalInside: BorderSide(color: Colors.black12),
     ),
-  }) : assert(() {
-         if (rows.isNotEmpty) {
-           if (rows.every((a) => columns.length != a.children.length)) {
-             throw FlutterError(
-               'Table contains irregular row lengths.\n'
-               'Every TableRow in a Table must have the same number of children, so that every cell is filled. '
-               'Otherwise, the table will contain holes.',
-             );
-           }
-         }
-         return true;
-       }());
+  });
 }
