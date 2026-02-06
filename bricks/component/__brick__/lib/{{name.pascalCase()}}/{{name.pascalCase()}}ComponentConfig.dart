@@ -8,7 +8,7 @@ import 'package:winter/winter.dart';
 class {{name.pascalCase()}}ComponentConfig implements Configurer{
 
 final String? instanceName;
-{{name.pascalCase()}}({this.instanceName});
+{{name.pascalCase()}}ComponentConfig({this.instanceName});
 
 //please write sub component configurations here
 Future<void> _preConfig()async{}
@@ -30,7 +30,7 @@ Future<void> _preConfig()async{}
   return {{name.pascalCase()}}Controller(
     //{{name.pascalCase()}}(),
     view,lf,model
-   ));};
+   );}
   
 
   //Factory injection with parameter 
