@@ -63,12 +63,14 @@ class TableWithStickyHeader extends StatelessWidget implements WinterView {
                     children: [
                       ..._model.columns.indexed.map(
                         (c) => TableCell(
-                          child: Container(
+                          child: Padding(
                             padding: _model.tableCellPadding,
-                            child: a.children[c.$1].child,
-                            alignment: c.$2.isNumberic
-                                ? Alignment.centerRight
-                                : Alignment.centerLeft,
+                            child: Container(
+                              child: a.children[c.$1].child,
+                              alignment: c.$2.isNumberic
+                                  ? Alignment.centerRight
+                                  : Alignment.centerLeft,
+                            ),
                           ),
                         ),
                       ),
