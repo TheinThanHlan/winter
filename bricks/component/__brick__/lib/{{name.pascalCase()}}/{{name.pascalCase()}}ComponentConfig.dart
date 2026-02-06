@@ -19,14 +19,18 @@ Future<void> _preConfig()async{}
   await _preConfig();
 
   //Lazy Singleton injection
-  getIt.registerLazySingleton(instanceName:instanceName,()=>{{name.pascalCase()}}Controller(
-    //{{name.pascalCase()}}(),
-   WinterLanguageFactory(
+  getIt.registerLazySingleton(instanceName:instanceName,(){
+
+  var  lf=WinterLanguageFactory(
     getIt<ValueNotifier<String>>(instanceName: "currentLanguage"),
     {"jp":JapanLanguageMap()},
-    ),
-    {{name.pascalCase()}}Model()
-   ));
+    );
+  var model=  {{name.pascalCase()}}Model();
+  var view={{name.pascalCase()}}(lf,model);
+  return {{name.pascalCase()}}Controller(
+    //{{name.pascalCase()}}(),
+    view,lf,model
+   ));};
   
 
   //Factory injection with parameter 
