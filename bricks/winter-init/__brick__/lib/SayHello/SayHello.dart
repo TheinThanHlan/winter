@@ -12,6 +12,6 @@ class SayHello extends StatelessWidget implements WinterView {
     //    return LayoutBuilder(builder: (context, constraints) {
     //      return Desktop(c);
     //    });
-    return Text(_lf.getLang("hello"));
+    return MaterialApp(home: Text(_lf.getLang("hello")));
   }
 }
