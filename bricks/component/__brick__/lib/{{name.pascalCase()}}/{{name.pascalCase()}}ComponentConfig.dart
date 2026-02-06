@@ -31,7 +31,7 @@ Future<void> _preConfig()async{}
   return {{name.pascalCase()}}Controller(
     //{{name.pascalCase()}}(),
     view,lf,model
-   );}
+   );});
   
 
   //Factory injection with parameter 
