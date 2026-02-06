@@ -4,30 +4,31 @@ import 'SayHelloModel.dart';
 import 'package:flutter/foundation.dart';
 import 'package:winter/winter.dart';
 
+class SayHelloComponentConfig implements Configurer {
+  //please write sub component configurations here
+  final String? instanceName;
+  Future<void> _preConfig() async {}
 
-class SayHelloComponentConfig implements Configurer{
+  SayHelloComponentConfig({this.instanceName});
 
-//please write sub component configurations here
-Future<void> _preConfig()async{}
+  Future<void> config() async {
+    await _preConfig();
 
+    //Lazy Singleton injection
+    getIt.registerLazySingleton(
+      instanceName: instanceName,
+      () => SayHelloController(
+        //SayHello(),
+        WinterLanguageFactory(
+          getIt<ValueNotifier<String>>(instanceName: "currentLanguage"),
+          {"jp": JapanLanguageMap()},
+        ),
+        SayHelloModel(),
+      ),
+    );
 
-
- Future<void> config({String?instanceName})async{
-  await _preConfig();
-
-  //Lazy Singleton injection
-  getIt.registerLazySingleton(instanceName:instanceName,()=>SayHelloController(
-    //SayHello(),
-   WinterLanguageFactory(
-    getIt<ValueNotifier<String>>(instanceName: "currentLanguage"),
-    {"jp":JapanLanguageMap()},
-    ),
-    SayHelloModel()
-   ));
-  
-
-  //Factory injection with parameter 
-  /*
+    //Factory injection with parameter
+    /*
   getIt.registerFactoryParam<SayHelloController,SayHelloModel,Null>(instanceName:instanceName,(p1,p2)=>SayHelloController(
 
     //SayHello(), 
@@ -41,15 +42,11 @@ Future<void> _preConfig()async{}
 
   */
 
-  await _postConfig();
-}
+    await _postConfig();
+  }
 
-
-//please write the tasks you want to do after config here
-Future<void> _postConfig()async{
-  debugPrint("\t~>\tSayHelloComponent injected;");
-}
-
-
-
+  //please write the tasks you want to do after config here
+  Future<void> _postConfig() async {
+    debugPrint("\t~>\tSayHelloComponent injected;");
+  }
 }

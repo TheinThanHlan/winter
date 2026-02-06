@@ -7,12 +7,15 @@ import 'package:winter/winter.dart';
 
 class {{name.pascalCase()}}ComponentConfig implements Configurer{
 
+final String? instanceName;
+{{name.pascalCase()}}({this.instanceName});
+
 //please write sub component configurations here
 Future<void> _preConfig()async{}
 
 
 
- Future<void> config({String?instanceName})async{
+ Future<void> config()async{
   await _preConfig();
 
   //Lazy Singleton injection

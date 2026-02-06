@@ -5,10 +5,12 @@ import 'package:flutter/foundation.dart';
 import 'package:winter/winter.dart';
 
 class TableWithStickyHeaderComponentConfig implements Configurer {
+  final String? instanceName;
   //please write sub component configurations here
   Future<void> _preConfig() async {}
 
-  Future<void> config({String? instanceName}) async {
+  TableWithStickyHeaderComponentConfig({this.instanceName});
+  Future<void> config() async {
     await _preConfig();
 
     //Lazy Singleton injection
