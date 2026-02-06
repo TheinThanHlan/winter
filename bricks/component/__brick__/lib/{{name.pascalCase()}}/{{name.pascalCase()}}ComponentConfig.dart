@@ -1,6 +1,7 @@
 import 'languages/JapanLanguageMap.dart';
 import '{{name.pascalCase()}}Controller.dart';
 import '{{name.pascalCase()}}Model.dart';
+import '{{name.pascalCase()}}.dart';
 import 'package:flutter/foundation.dart';
 import 'package:winter/winter.dart';
 
@@ -18,13 +19,13 @@ Future<void> _preConfig()async{}
  Future<void> config()async{
   await _preConfig();
 
-  //Lazy Singleton injection
-  getIt.registerLazySingleton(instanceName:instanceName,(){
-
   var  lf=WinterLanguageFactory(
     getIt<ValueNotifier<String>>(instanceName: "currentLanguage"),
     {"jp":JapanLanguageMap()},
     );
+  
+  //Lazy Singleton injection
+  getIt.registerLazySingleton(instanceName:instanceName,(){
   var model=  {{name.pascalCase()}}Model();
   var view={{name.pascalCase()}}(lf,model);
   return {{name.pascalCase()}}Controller(
@@ -36,12 +37,9 @@ Future<void> _preConfig()async{}
   //Factory injection with parameter 
   /*
   getIt.registerFactoryParam<{{name.pascalCase()}}Controller,{{name.pascalCase()}}Model,Null>(instanceName:instanceName,(p1,p2)=>{{name.pascalCase()}}Controller(
-
-    //{{name.pascalCase()}}(), 
-   WinterLanguageFactory(
-    getIt<ValueNotifier<String>>(instanceName: "currentLanguage"),
-    {"jp":JapanLanguageMap()}
-    ),
+    
+    {{name.pascalCase()}}(lf,p1), 
+    lf,
     p1
 
    ),);
