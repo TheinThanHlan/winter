@@ -18,7 +18,7 @@ class WinterSqliteDatabaseProvider {
   );
 
   //function to create or get the database object
-  Future<void> createDb() async {
+  Future<WinterSqliteDatabaseProvider> createDb() async {
     if (_db == null) {
       if (Platform.isWindows || Platform.isLinux) {
         sqfliteFfiInit();
@@ -60,6 +60,7 @@ class WinterSqliteDatabaseProvider {
         },
       );
     }
+    return this;
   }
 
   Database getDb() {
