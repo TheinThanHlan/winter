@@ -3,24 +3,28 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
 import 'package:winter/winter.dart';
 
 class DevScreenSimulatorModel implements WinterModel {
   final Size targetScreenResolution;
+  //final Size currentScreenResolution;
   final double targetScreenPPI;
+  final double currentScreenPPI;
   final Widget child;
-  DevScreenSimulatorModel(
-    this.child,
-    this.targetScreenResolution,
-    this.targetScreenPPI,
-  );
+  DevScreenSimulatorModel({
+    required this.child,
+    //    required this.currentScreenResolution,
+    required this.currentScreenPPI,
+    required this.targetScreenResolution,
+    required this.targetScreenPPI,
+  });
   double getCurrentScreenPPI() {
     //get current screen info for wayland
     var result = Process.runSync("wlr-randr", ["--json"]);
     Map<String, dynamic> screen_info = jsonDecode(result.stdout.toString())[0];
     //calculate resolution area
     Map<String, dynamic> current_mode = (screen_info["modes"] as List).first;
-
     //calculate dpi
     var ppi = calculatePPI(
       Size(
@@ -29,6 +33,7 @@ class DevScreenSimulatorModel implements WinterModel {
       ),
       Size(current_mode["width"] * 1.0, current_mode["height"] * 1.0),
     );
+    print(ppi);
     return ppi;
   }
 
@@ -65,7 +70,8 @@ class DevScreenSimulatorModel implements WinterModel {
   }
 
   Size calculateTargetResolution() {
-    double ppi = getCurrentScreenPPI();
+    //double ppi = getCurrentScreenPPI();
+    double ppi = currentScreenPPI;
     double width = targetScreenResolution.width * ppi / targetScreenPPI;
     double height = targetScreenResolution.height * ppi / targetScreenPPI;
     return Size(width, height);
